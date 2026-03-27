@@ -1,76 +1,170 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>我的第一个页面</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            color: #333;
-        }
-        header {
-            background: rgba(255,255,255,0.9);
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .container {
-            padding: 40px;
-            text-align: center;
-        }
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 20px auto;
-            max-width: 400px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            background: #4facfe;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #3a8be0;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            font-size: 14px;
-            color: #fff;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的博客</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial;
+    background: #f5f7fa;
+    color: #333;
+}
+
+/* 导航栏 */
+header {
+    background: #222;
+    color: #fff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+nav a {
+    color: #ccc;
+    margin-left: 20px;
+    text-decoration: none;
+}
+nav a:hover {
+    color: #fff;
+}
+
+/* 主体布局 */
+.container {
+    display: flex;
+    max-width: 1100px;
+    margin: 30px auto;
+    gap: 20px;
+}
+
+/* 文章区域 */
+.main {
+    flex: 3;
+}
+.post {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.post h2 {
+    margin-top: 0;
+}
+.post p {
+    color: #666;
+}
+.post button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    background: #4facfe;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* 侧边栏 */
+.sidebar {
+    flex: 1;
+}
+.widget {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.widget h3 {
+    margin-top: 0;
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: #aaa;
+    margin-top: 40px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    🌐 我的网页
+    <h1>🌙 我的博客</h1>
+    <nav>
+        <a href="#">首页</a>
+        <a href="#">分类</a>
+        <a href="#">关于</a>
+    </nav>
 </header>
 
 <div class="container">
-    <div class="card">
-        <h2>欢迎！</h2>
-        <p>这是一个简单的 HTML 示例页面。</p>
-        <button onclick="showMessage()">点我试试</button>
+
+    <!-- 文章列表 -->
+    <div class="main">
+        <div class="post">
+            <h2>第一篇博客</h2>
+            <p>这是一个示例文章内容，你可以在这里写你的博客。</p>
+            <button onclick="readMore()">阅读更多</button>
+        </div>
+
+        <div class="post">
+            <h2>学习前端的心得</h2>
+            <p>HTML + CSS + JavaScript 是网页开发的基础。</p>
+            <button onclick="readMore()">阅读更多</button>
+        </div>
+
+        <div class="post">
+            <h2>随笔</h2>
+            <p>今天写了一个简单的博客页面，还挺有成就感。</p>
+            <button onclick="readMore()">阅读更多</button>
+        </div>
     </div>
+
+    <!-- 侧边栏 -->
+    <div class="sidebar">
+        <div class="widget">
+            <h3>👤 关于我</h3>
+            <p>一个喜欢编程的人。</p>
+        </div>
+
+        <div class="widget">
+            <h3>📂 分类</h3>
+            <ul>
+                <li>前端</li>
+                <li>生活</li>
+                <li>随笔</li>
+            </ul>
+        </div>
+
+        <div class="widget">
+            <h3>🔥 热门文章</h3>
+            <ul>
+                <li>如何学编程</li>
+                <li>CSS 小技巧</li>
+                <li>JavaScript 入门</li>
+            </ul>
+        </div>
+    </div>
+
 </div>
 
 <footer>
-    © 2026 我的网页
+    © 2026 我的博客 | Powered by HTML
 </footer>
 
 <script>
-    function showMessage() {
-        alert("你好！欢迎来到这个页面 😄");
-    }
+function readMore() {
+    alert("这里可以跳转到文章详情页！");
+}
 </script>
 
 </body>
